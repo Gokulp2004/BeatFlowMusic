@@ -225,15 +225,18 @@
     ></script>
 
     <script>
+      // Declare a flag to check if FB is initialized
+      let isFBInitialized = false;
+
       window.fbAsyncInit = function () {
         FB.init({
-          appId:
-            "EAAPTirV4ekEBOyYgFPDMTIVZCCxZBRDRSBG9fZBHmYUJp8gvNWO7O0ELZBbDLyMZC8FdjfPPLbdn0NdeXedF2e94yM1nf5G1PsRrAO4TKwZBE2RJKYfeYJZB7yNw4a99zJr2T5h68FjNbbw1P7vkeeDJO1iaeYhWycmoa9hkg1K6pXDtMdm4XxP6qpdhavSBgYzFTVlBfzFOQSuL4ZAFx19dcFVcNNNWJiqhN06q9XzZANNBGBBtZBR0j4HuExP0xyeF0rXK33pdzTI7oZD", // Replace with your app ID
-          cookie: true, // Enable cookies to allow the server to access the session
-          xfbml: true, // Parse social plugins on this webpage
-          version: "v13.0", // Use the latest version
+          appId: "YOUR_APP_ID", // Replace with your Facebook App ID
+          cookie: true,
+          xfbml: true,
+          version: "v13.0",
         });
-        FB.AppEvents.logPageView(); // Log page view for analytics
+
+        isFBInitialized = true; // Set flag to true after initialization
       };
 
       (function (d, s, id) {
@@ -247,6 +250,11 @@
       })(document, "script", "facebook-jssdk");
 
       function facebookLogin() {
+        if (!isFBInitialized) {
+          console.log("Facebook SDK is not initialized yet.");
+          return;
+        }
+
         FB.login(
           function (response) {
             if (response.authResponse) {
@@ -268,7 +276,7 @@
             }
           },
           {
-            scope: "email", // Request email permission
+            scope: "email",
           }
         );
       }
