@@ -1,0 +1,246 @@
+/* Importing two Google fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+body {
+    background: linear-gradient(135deg, #1db954 25%, #191414 100%);
+    font-family: 'Varela Round', sans-serif;
+    color: white;
+}
+
+
+/* Global Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Navigation Bar */
+
+nav {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    height: 65px;
+    background-color: black;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+nav ul:hover {
+    background-color: #333;
+}
+
+.brand img {
+    width: 44px;
+    padding: 0 8px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 1.3rem;
+    margin-right: 20px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+}
+
+
+/* Container Styles */
+
+.container {
+    min-height: 72vh;
+    background: rgba(0, 0, 0, 0.85);
+    /* Dark background for better contrast */
+    backdrop-filter: blur(20px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    display: flex;
+    margin: 25px auto;
+    width: 70%;
+    border-radius: 12px;
+    padding: 34px;
+    transition: transform 0.3s;
+    /* Transition on hover */
+}
+
+.container:hover {
+    transform: scale(1.02);
+    /* Scale up on hover */
+}
+
+
+/* Bottom Bar */
+
+.bottom {
+    position: sticky;
+    bottom: 0;
+    height: 130px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.icons {
+    margin-top: 14px;
+}
+
+.icons i {
+    cursor: pointer;
+    transition: transform 0.2s;
+    /* Transition on hover */
+}
+
+.icons i:hover {
+    transform: scale(1.2);
+    /* Scale up icon on hover */
+}
+
+
+/* Progress Bar */
+
+#myProgressBar {
+    width: 80vw;
+    cursor: pointer;
+    height: 8px;
+    /* Increased height for visibility */
+    background-color: rgba(255, 255, 255, 0.6);
+    /* Background color for progress bar */
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+#myProgressBar div {
+    height: 100%;
+    /* Fill height of progress bar */
+    background-color: #1db954;
+    /* Progress fill color */
+    transition: width 0.3s;
+    /* Smooth transition for progress fill */
+}
+
+
+/* Song Item Styles */
+
+.songItemContainer {
+    margin-top: 74px;
+}
+
+.songItem {
+    height: 50px;
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Light transparent background */
+    color: white;
+    margin: 12px 10px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 34px;
+    transition: background-color 0.3s;
+    /* Transition for background */
+}
+
+.songItem:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Change background on hover */
+}
+
+.songItem img {
+    width: 45px;
+    margin: 0px 25px;
+    padding: 0px 3px;
+    border-radius: 100%;
+    transition: transform 0.3s;
+    /* Transition on hover */
+}
+
+.songItem img:hover {
+    transform: scale(1.1);
+    /* Scale image on hover */
+}
+
+.timestamp {
+    margin: 0 23px;
+}
+
+.timestamp i {
+    cursor: pointer;
+}
+
+
+/* Song Info */
+
+.songInfo {
+    position: absolute;
+    left: 10vw;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.songInfo img {
+    opacity: 0;
+    transition: opacity 0.4s ease-in;
+}
+
+
+/* Show image on hover */
+
+.songItem:hover .songInfo img {
+    opacity: 1;
+    /* Make image visible on hover */
+    transition: opacity 0.4s ease-in;
+}
+
+.share-button-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    /* Center the button */
+}
+
+.fb-share-btn {
+    background-color: #1db954;
+    /* Same green as the progress bar */
+    color: white;
+    /* Text color */
+    border: none;
+    /* Remove border */
+    border-radius: 25px;
+    /* Rounded corners */
+    padding: 10px 20px;
+    /* Padding for spacing */
+    font-family: 'Ubuntu', sans-serif;
+    /* Consistent font */
+    font-size: 1rem;
+    /* Font size */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.2s;
+    /* Smooth transition for hover effects */
+}
+
+.fb-share-btn:hover {
+    background-color: #14833b;
+    /* Darker green on hover */
+    transform: scale(1.05);
+    /* Slightly scale up on hover */
+}
