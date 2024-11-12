@@ -36,7 +36,96 @@
               </span>
             </span>
           </div>
-          <!-- Other songs go here... -->
+          <div class="songItem">
+            <img alt="1" />
+            <span class="songName">Ed Sheeran - Shape of You</span>
+            <span class="songlistplay">
+              <span class="timestamp"
+                >04:22
+                <i id="1" class="far songItemPlay fa-play-circle"></i>
+              </span>
+            </span>
+          </div>
+          <div class="songItem">
+            <img alt="1" />
+            <span class="songName">Tones and I - Dance Monkey</span>
+            <span class="songlistplay">
+              <span class="timestamp"
+                >03:29
+                <i id="2" class="far songItemPlay fa-play-circle"></i>
+              </span>
+            </span>
+          </div>
+          <div class="songItem">
+            <img alt="1" />
+            <span class="songName">Dua Lipa - Levitating</span>
+            <span class="songlistplay">
+              <span class="timestamp"
+                >03:27
+                <i id="3" class="far songItemPlay fa-play-circle"></i>
+              </span>
+            </span>
+          </div>
+          <div class="songItem">
+            <img alt="1" />
+            <span class="songName">A.R. Rahman - Violin Music</span>
+            <span class="songlistplay">
+              <span class="timestamp"
+                >05:54
+                <i id="4" class="far songItemPlay fa-play-circle"></i>
+              </span>
+            </span>
+          </div>
+          <div class="songItem">
+            <img alt="1" />
+            <span class="songName">Animal - Sari Duniya</span>
+            <span class="songlistplay">
+              <span class="timestamp"
+                >03:02
+                <i id="5" class="far songItemPlay fa-play-circle"></i>
+              </span>
+            </span>
+          </div>
+          <div class="songItem">
+            <img alt="1" />
+            <span class="songName">Kabir Singh - Bekhayali</span>
+            <span class="songlistplay">
+              <span class="timestamp"
+                >02:52
+                <i id="6" class="far songItemPlay fa-play-circle"></i>
+              </span>
+            </span>
+          </div>
+          <div class="songItem">
+            <img alt="1" />
+            <span class="songName">Mustafa Mustafa - Telugu</span>
+            <span class="songlistplay">
+              <span class="timestamp"
+                >06:11
+                <i id="7" class="far songItemPlay fa-play-circle"></i>
+              </span>
+            </span>
+          </div>
+          <div class="songItem">
+            <img alt="1" />
+            <span class="songName">Em Sandeham Ledu - Telugu</span>
+            <span class="songlistplay">
+              <span class="timestamp"
+                >03:49
+                <i id="8" class="far songItemPlay fa-play-circle"></i>
+              </span>
+            </span>
+          </div>
+          <div class="songItem">
+            <img alt="1" />
+            <span class="songName">Nee Kalli Neeli</span>
+            <span class="songlistplay">
+              <span class="timestamp"
+                >05:09
+                <i id="9" class="far songItemPlay fa-play-circle"></i>
+              </span>
+            </span>
+          </div>
         </div>
 
         <!-- Add a Share button -->
@@ -89,24 +178,17 @@
 
       // Share playlist function
       function sharePlaylist() {
-        if (typeof FB !== "undefined") {
-          FB.ui(
-            {
-              method: "share",
-              href: window.location.href, // Share the current page URL
-              quote: "Check out my playlist on BeatFlow!",
-            },
-            function (response) {
-              if (response && !response.error_message) {
-                alert("Playlist shared successfully!");
-              } else {
-                alert("Error while sharing the playlist.");
-              }
-            }
-          );
-        } else {
-          alert("Facebook SDK is not loaded yet.");
-        }
+        const shareUrl =
+          "https://gokulp2004.github.io/BeatFlowMusic/beatflow/Beatflow-songs/songs.html";
+        const quote = "Check out my playlist on BeatFlow!";
+
+        // Construct the Facebook sharing URL with the desired URL and quote
+        const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+          shareUrl
+        )}&quote=${encodeURIComponent(quote)}`;
+
+        // Open the Facebook sharing URL in a new window
+        window.open(facebookShareUrl, "_blank", "width=600,height=400");
       }
 
       // Assign the share function to the button
